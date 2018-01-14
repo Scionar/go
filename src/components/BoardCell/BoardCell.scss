@@ -1,0 +1,31 @@
+.board-cell {
+  display: inline-block;
+  float: left;
+  position: relative;
+  height: calc(100% / 19);
+  width: calc(100% / 19);
+}
+
+@mixin stone($color) {
+  &:before {
+    background-color: $color;
+    border-radius: 50%;
+    box-shadow: 0 0 2px;
+    content: '';
+    display: inline-block;
+    height: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+  }
+}
+
+.board-cell_white {
+  @include stone(#FFF);
+}
+
+.board-cell_black {
+  @include stone(#000);
+}

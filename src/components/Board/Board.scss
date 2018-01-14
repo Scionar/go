@@ -1,0 +1,42 @@
+$boardWidth: 19 * 40px;
+$gridWidth: 18 * 40px;
+
+.board {
+  background-color: #f4c871;
+  background-image: url(../../images/tileable_wood_texture.png);
+  border-radius: 4px;
+  box-shadow: 0 0 50px;
+  height: $boardWidth;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: $boardWidth;
+}
+
+.board__grid {
+  height: $gridWidth;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: $gridWidth;
+}
+
+.board__grid-cell {
+  border-top: 1px solid rgba(0,0,0,0.5);
+  border-left: 1px solid rgba(0,0,0,0.5);
+  box-sizing: border-box;
+  display: inline-block;
+  float: left;
+  height: calc(100% / 18);
+  width: calc(100% / 18);
+
+  &:nth-child(18n) {
+    border-right: 1px solid rgba(0,0,0,0.5);
+  }
+
+  &:nth-child(1n + 307) {
+    border-bottom: 1px solid rgba(0,0,0,0.5);
+  }
+}
